@@ -31,8 +31,10 @@ st.markdown("""
             font-family: 'Inter', sans-serif;
         }
 
+        /* Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
+            height: 8px;
         }
 
         ::-webkit-scrollbar-track {
@@ -48,22 +50,24 @@ st.markdown("""
             background: #999999;
         }
 
-        /* Navbar Styling */
+        /* Navbar - Mobile Responsive */
         .navbar {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1rem;
             background-color: #ffffff;
             border-bottom: 1px solid #e0e0e0;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            gap: 1rem;
         }
 
         .navbar-brand {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: #000000;
             letter-spacing: -0.5px;
@@ -71,18 +75,21 @@ st.markdown("""
 
         .navbar-menu {
             display: flex;
-            gap: 2.5rem;
+            gap: 1.5rem;
             align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .navbar-item {
             color: #000000;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             cursor: pointer;
-            padding: 0.5rem 0;
+            padding: 0.4rem 0;
             border-bottom: 2px solid transparent;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .navbar-item:hover {
@@ -97,14 +104,15 @@ st.markdown("""
 
         /* Header */
         .header-section {
-            padding: 3rem 2rem;
+            padding: 2rem 1rem;
             background-color: #ffffff;
             border-bottom: 1px solid #e0e0e0;
             margin-bottom: 2rem;
+            text-align: center;
         }
 
         .header-section h1 {
-            font-size: 3rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: #000000;
             margin-bottom: 0.5rem;
@@ -112,22 +120,19 @@ st.markdown("""
         }
 
         .header-section p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #666666;
             font-weight: 400;
-            margin-bottom: 2rem;
+            margin: 0.8rem 0;
         }
 
-        /* Team Section */
+        /* Team Section - Responsive Grid */
         .team-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-            padding: 2rem;
-            background-color: #f9f9f9;
-            border-radius: 12px;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            padding: 1rem;
         }
 
         .team-card {
@@ -137,12 +142,12 @@ st.markdown("""
         }
 
         .team-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
         }
 
         .team-image {
-            width: 140px;
-            height: 140px;
+            width: 120px;
+            height: 120px;
             margin: 0 auto 1rem;
             border-radius: 8px;
             object-fit: cover;
@@ -152,18 +157,17 @@ st.markdown("""
 
         .team-card:hover .team-image {
             border-color: #000000;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
         }
 
         .team-name {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 700;
             color: #000000;
-            margin-bottom: 0.3rem;
         }
 
         .team-role {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #666666;
             font-weight: 500;
         }
@@ -171,173 +175,68 @@ st.markdown("""
         /* Supervisor Badge */
         .supervisor-section {
             text-align: center;
-            padding: 1.5rem;
+            padding: 1.2rem;
             background-color: #f0f0f0;
             border-radius: 8px;
-            margin: 2rem 0;
+            margin: 1.5rem 1rem;
         }
 
         .supervisor-badge {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
+            padding: 0.7rem 1.3rem;
             background-color: #000000;
             color: #ffffff;
             border-radius: 6px;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
-        /* Cards */
-        .card {
+        /* Cards & Metrics */
+        .card, .metric-card, .feature-box {
             background-color: #f9f9f9;
             border: 1px solid #e0e0e0;
             border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
+            padding: 1.2rem;
             margin: 1rem 0;
-        }
-
-        .card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-            border-color: #000000;
-        }
-
-        /* Metric Cards */
-        .metric-card {
-            background-color: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 2rem 1.5rem;
-            text-align: center;
             transition: all 0.3s ease;
         }
 
-        .metric-card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+        .metric-card {
+            text-align: center;
+            padding: 1.5rem 1rem;
         }
 
         .metric-label {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #666666;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
         }
 
         .metric-value {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: #000000;
-            margin: 0.5rem 0;
-        }
-
-        .metric-desc {
-            font-size: 0.8rem;
-            color: #999999;
-            font-weight: 500;
-        }
-
-        /* Feature Box */
-        .feature-box {
-            background-color: #f9f9f9;
-            border-left: 4px solid #000000;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            transition: all 0.3s ease;
-        }
-
-        .feature-box:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-        }
-
-        .feature-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #000000;
-            margin-bottom: 0.5rem;
-        }
-
-        .feature-desc {
-            font-size: 0.9rem;
-            color: #666666;
-            font-weight: 400;
-            line-height: 1.6;
-        }
-
-        /* Comparison Table */
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-        }
-
-        .comparison-table th {
-            background-color: #f0f0f0;
-            border: 1px solid #e0e0e0;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 700;
-            color: #000000;
-        }
-
-        .comparison-table td {
-            border: 1px solid #e0e0e0;
-            padding: 1rem;
-            color: #666666;
-        }
-
-        .comparison-table .checkmark {
-            color: #22c55e;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .comparison-table .crossmark {
-            color: #ef4444;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        /* Headings */
-        h1, h2, h3, h4, h5, h6 {
-            color: #000000;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        h2 {
-            border-left: 4px solid #000000;
-            padding-left: 1rem;
-            margin-top: 2rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-        }
-
-        h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            margin: 0.4rem 0;
         }
 
         /* Buttons */
         .stButton > button {
+            width: 100%;
             background-color: #000000;
             color: #ffffff;
             font-weight: 600;
             border: 1px solid #000000;
             border-radius: 8px;
-            padding: 0.8rem 2rem;
-            transition: all 0.3s ease;
+            padding: 0.9rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            font-size: 0.9rem;
         }
 
         .stButton > button:hover {
             background-color: #ffffff;
             color: #000000;
-            border: 1px solid #000000;
         }
 
         /* File Uploader */
@@ -345,139 +244,127 @@ st.markdown("""
             background-color: #f9f9f9 !important;
             border: 2px dashed #cccccc !important;
             border-radius: 12px;
-            padding: 1.5rem !important;
+            padding: 2rem !important;
+            text-align: center;
         }
 
-        /* Dataframe */
-        div[data-testid="stDataFrame"] {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-        }
-
-        /* Sidebar */
-        [data-testid="stSidebar"] {
-            background-color: #ffffff;
-            border-right: 1px solid #e0e0e0;
-        }
-
-        [data-testid="stSidebar"] h1 {
-            color: #000000;
-        }
-
-        .sidebar-section {
-            padding: 1rem 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .sidebar-section h3 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #000000;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .sidebar-item {
-            padding: 0.75rem 0;
+        /* Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
             font-size: 0.9rem;
-            color: #666666;
-            line-height: 1.6;
+            overflow-x: auto;
+            display: block;
+            white-space: nowrap;
         }
 
-        .badge {
-            display: inline-block;
-            background-color: #f0f0f0;
-            color: #000000;
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
+        .comparison-table th, .comparison-table td {
+            padding: 0.8rem;
+            border: 1px solid #e0e0e0;
+            text-align: center;
         }
 
-        .badge-success {
-            background-color: #dcfce7;
-            color: #166534;
-        }
-
-        /* Messages */
-        .stSuccess {
-            background-color: #f0fdf4 !important;
-            border-left: 4px solid #22c55e !important;
-            border-radius: 8px !important;
-        }
-
-        .stInfo {
-            background-color: #f0f9ff !important;
-            border-left: 4px solid #0284c7 !important;
-            border-radius: 8px !important;
-        }
-
-        .stWarning {
-            background-color: #fef3c7 !important;
-            border-left: 4px solid #f59e0b !important;
-            border-radius: 8px !important;
-        }
-
-        .stError {
-            background-color: #fef2f2 !important;
-            border-left: 4px solid #ef4444 !important;
-            border-radius: 8px !important;
-        }
-
-        /* Expander */
-        .streamlit-expanderHeader {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            font-weight: 600;
-            color: #000000;
+        /* Headings */
+        h2 {
+            border-left: 4px solid #000000;
+            padding-left: 0.8rem;
+            margin: 2rem 0 1.5rem;
+            font-size: 1.6rem;
         }
 
         /* Footer */
         .footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2rem 1rem;
             margin-top: 3rem;
             border-top: 1px solid #e0e0e0;
-            color: #666666;
             background-color: #f9f9f9;
-            border-radius: 0;
-        }
-
-        .footer h3 {
-            color: #000000;
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
         }
 
         /* Charts */
         .matplotlib-figure {
-            background-color: #ffffff;
             border-radius: 12px;
-            padding: 1rem;
+            padding: 0.5rem;
             border: 1px solid #e0e0e0;
+            overflow-x: auto;
         }
 
-        /* Text */
-        body, p {
-            color: #000000;
+        /* Mobile-first Media Queries */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.8rem;
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar-brand {
+                font-size: 1.4rem;
+            }
+            .navbar-menu {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+            .header-section h1 {
+                font-size: 1.9rem;
+            }
+            .team-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+                padding: 0.5rem;
+            }
+            .team-image {
+                width: 100px;
+                height: 100px;
+            }
         }
 
-        a {
-            color: #000000;
+        @media (max-width: 480px) {
+            .navbar-menu {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .team-container {
+                grid-template-columns: 1fr;
+            }
+            .header-section {
+                padding: 1.5rem 1rem;
+            }
+            .header-section h1 {
+                font-size: 1.7rem;
+            }
+            .metric-value {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .comparison-table {
+                font-size: 0.8rem;
+            }
+            .comparison-table th, .comparison-table td {
+                padding: 0.5rem;
+            }
         }
 
-        a:hover {
-            opacity: 0.7;
+        /* Ensure Streamlit columns stack on mobile */
+        [data-testid="column"] {
+            width: 100% !important;
+            flex: 1 1 100% !important;
+            min-width: 100% !important;
         }
 
-        .highlight-text {
-            background-color: #fffbeb;
-            padding: 0.2rem 0.4rem;
-            border-radius: 3px;
-            font-weight: 600;
+        /* Fix horizontal overflow */
+        .block-container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @media (min-width: 769px) {
+            .block-container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
         }
     </style>
 """, unsafe_allow_html=True)
