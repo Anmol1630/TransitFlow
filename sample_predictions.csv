@@ -1,0 +1,11 @@
+Temperature,Day_Monday,Day_Saturday,Day_Sunday,Day_Thursday,Day_Tuesday,Day_Wednesday,Route_B2,Route_C3,Route_D4,Route_E5,Weather_Rainy,Weather_Snowy,Weather_Stormy,Weather_Sunny,Holiday_Yes,Predicted_Ridership
+28.6,False,False,False,False,True,False,True,False,False,False,True,False,False,False,True,877.24
+34.3,False,False,False,False,False,False,False,False,False,True,False,False,False,True,False,1322.86
+35.4,False,False,True,False,False,False,False,False,False,False,False,True,False,False,False,733.12
+6.1,False,False,False,False,False,True,False,True,False,False,False,False,False,True,True,1036.3
+27.1,False,True,False,False,False,False,False,True,False,False,False,False,False,True,False,1066.32
+35.7,False,False,False,False,False,False,False,True,False,False,False,False,True,False,True,881.37
+37.6,True,False,False,False,False,False,False,False,True,False,False,False,False,True,False,1254.53
+5.8,True,False,False,False,False,False,False,False,False,True,True,False,False,False,False,831.14
+32.9,False,False,False,True,False,False,True,False,False,False,False,True,False,False,False,957.67
+33.1,False,False,False,False,True,False,True,False,False,False,False,False,False,False,False,1158.08
